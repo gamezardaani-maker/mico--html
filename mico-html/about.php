@@ -1,3 +1,8 @@
+<?php
+// Connect data and functions
+include 'data.php';      
+include 'functions.php'; 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,38 +46,22 @@
 
   <div class="hero_area">
     <!-- header section strats -->
+     <!-- header section strats -->
     <header class="header_section">
       <div class="header_top">
         <div class="container">
           <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 123455678990
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                Email : demo@gmail.com
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Location
-              </span>
-            </a>
+              <?php renderContactInfo($contactInfo); ?>
           </div>
         </div>
       </div>
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <img src="images/logo.png" alt="">
             </a>
-            </a>
+
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
@@ -81,39 +70,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
-                  <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="about.html"> About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="treatment.html">Treatment</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="doctor.html">Doctors</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
+                   <?php renderNavMenu($navItems); ?>
                 </ul>
               </div>
               <div class="quote_btn-container">
-                <a href="">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Login
-                  </span>
-                </a>
-                <a href="">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Sign Up
-                  </span>
-                </a>
+                 <?php renderAuthLinks($authLinks); ?>
                 <form class="form-inline">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -126,12 +87,14 @@
       </div>
     </header>
     <!-- end header section -->
-  </div>
-
+   
+  
 
   <!-- about section -->
 
-  <section class="about_section layout_padding">
+  
+  <!-- about section -->
+   <section class="about_section">
     <div class="container  ">
       <div class="row">
         <div class="col-md-6 ">
@@ -149,20 +112,20 @@
             <p>
               has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors
             </p>
-            <a href="">
+            <a href="about.php">
               Read More
             </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    </section>
 
   <!-- end about section -->
 
 
   <!-- info section -->
-  <section class="info_section ">
+    <section class="info_section ">
     <div class="container">
       <div class="info_top">
         <div class="info_logo">
@@ -181,124 +144,12 @@
       </div>
       <div class="info_bottom layout_padding2">
         <div class="row info_main_row">
-          <div class="col-md-6 col-lg-3">
-            <h5>
-              Address
-            </h5>
-            <div class="info_contact">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_links">
-              <h5>
-                Useful link
-              </h5>
-              <div class="info_links_menu">
-                <a href="index.html">
-                  Home
-                </a>
-                <a class="active" href="about.html">
-                  About
-                </a>
-                <a href="treatment.html">
-                  Treatment
-                </a>
-                <a href="doctor.html">
-                  Doctors
-                </a>
-                <a href="testimonial.html">
-                  Testimonial
-                </a>
-                <a href="contact.html">
-                  Contact us
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                LATEST POSTS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post1.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post2.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                News
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post3.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post4.png" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-            </div>
-          </div>
+           <?php 
+            render_contact_section($address['contacts'], $address['social']);
+            render_links_section($useful_links);
+            render_posts_section($posts);
+        ?>
         </div>
-      </div>
     </div>
   </section>
   <!-- end info_section -->
@@ -327,8 +178,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-
-
+  
 </body>
 
 </html>

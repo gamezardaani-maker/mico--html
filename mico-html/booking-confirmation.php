@@ -110,18 +110,59 @@ $appointmentDate = htmlspecialchars($_POST['appointment_date'] ?? '');
     </div>
 </section>
 
-<!-- Optional Footer -->
-<footer class="footer_section">
+ <!-- info section -->
+  <section class="info_section ">
     <div class="container">
-        <p>
-            &copy; <span id="displayYear"></span> All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
-        </p>
+      <div class="info_top">
+        <div class="info_logo">
+          <a href="">
+            <img src="images/logo.png" alt="">
+          </a>
+        </div>
+        <div class="info_form">
+          <form action="">
+            <input type="email" placeholder="Your email">
+            <button>
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="info_bottom layout_padding2">
+        <div class="row info_main_row">
+           <?php 
+            render_contact_section($address['contacts'], $address['social']);
+            render_links_section($useful_links);
+            render_posts_section($posts);
+        ?>
+        </div>
     </div>
-</footer>
+  </section>
+  <!-- end info_section -->
 
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/custom.js"></script>
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
 </body>
 </html>

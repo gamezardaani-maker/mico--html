@@ -59,7 +59,7 @@ include 'functions.php'; // contains reusable functions
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <img src="images/logo.png" alt="">
             </a>
 
@@ -88,6 +88,7 @@ include 'functions.php'; // contains reusable functions
       </div>
     </header>
     <!-- end header section -->
+
     <!-- slider section -->
     <section class="slider_section ">
       <div class="dot_design">
@@ -113,7 +114,7 @@ include 'functions.php'; // contains reusable functions
   </div>
 
 
-  <!-- book section -->
+  
   <!-- book section -->
 <section class="book_section layout_padding">
     <div class="container">
@@ -132,13 +133,13 @@ include 'functions.php'; // contains reusable functions
                         </div>
                         <div class="form-group col-lg-4">
                             <label for="inputDoctorName">Doctor's Name</label>
-                            <select class="form-control wide" id="inputDoctorName" name="doctor">
+                            <select class="form-control" id="inputDoctorName" name="doctor">
                                 <?php renderSelectOptions($doctors); ?>
                             </select>
                         </div>
                         <div class="form-group col-lg-4">
                             <label for="inputDepartmentName">Department's Name</label>
-                            <select class="form-control wide" id="inputDepartmentName" name="department">
+                            <select class="form-control" id="inputDepartmentName" name="department">
                                 <?php renderSelectOptions($departments); ?>
                             </select>
                         </div>
@@ -176,11 +177,11 @@ include 'functions.php'; // contains reusable functions
 </section>
 <!-- end book section -->
 
+  
 
 
   <!-- about section -->
-
-  <section class="about_section">
+   <section class="about_section">
     <div class="container  ">
       <div class="row">
         <div class="col-md-6 ">
@@ -198,14 +199,14 @@ include 'functions.php'; // contains reusable functions
             <p>
               has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors
             </p>
-            <a href="">
+            <a href="about.php">
               Read More
             </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    </section>
 
   <!-- end about section -->
 
@@ -223,80 +224,10 @@ include 'functions.php'; // contains reusable functions
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/t1.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Nephrologist Care
-              </h4>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/t2.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Eye Care
-              </h4>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/t3.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Pediatrician Clinic
-              </h4>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/t4.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Parental Care
-              </h4>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <?php renderTreatments($treatments); ?>
+
+</div>
+</div>
   </section>
 
   <!-- end treatment section -->
@@ -551,124 +482,12 @@ include 'functions.php'; // contains reusable functions
       </div>
       <div class="info_bottom layout_padding2">
         <div class="row info_main_row">
-          <div class="col-md-6 col-lg-3">
-            <h5>
-              Address
-            </h5>
-            <div class="info_contact">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_links">
-              <h5>
-                Useful link
-              </h5>
-              <div class="info_links_menu">
-                <a class="active" href="index.html">
-                  Home
-                </a>
-                <a href="about.html">
-                  About
-                </a>
-                <a href="treatment.html">
-                  Treatment
-                </a>
-                <a href="doctor.html">
-                  Doctors
-                </a>
-                <a href="testimonial.html">
-                  Testimonial
-                </a>
-                <a href="contact.html">
-                  Contact us
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                LATEST POSTS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post1.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post2.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                News
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post3.jpg" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/post4.png" alt="">
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-            </div>
-          </div>
+           <?php 
+            render_contact_section($address['contacts'], $address['social']);
+            render_links_section($useful_links);
+            render_posts_section($posts);
+        ?>
         </div>
-      </div>
     </div>
   </section>
   <!-- end info_section -->

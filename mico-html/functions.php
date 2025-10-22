@@ -16,8 +16,9 @@ function renderContactInfo($contacts) {
 //render navigation menu
 
 function renderNavMenu($items) {
+    $currentPage = basename($_SERVER['PHP_SELF']);
     foreach ($items as $item) {
-        $activeClass = !empty($item['active']) ? 'active' : '';
+        $activeClass = ($item['link'] === $currentPage) ? 'active' : '';
         echo '<li class="nav-item ' . $activeClass . '">';
         echo '<a class="nav-link" href="' . htmlspecialchars($item['link']) . '">';
         echo htmlspecialchars($item['title']);
@@ -105,4 +106,111 @@ function renderSubmitButton($button) {
     echo '<button type="submit" class="' . htmlspecialchars($button['class']) . '">' . htmlspecialchars($button['text']) . '</button>';
     echo '</div>';
 }
+
+//render about
+function renderAboutSection($aboutSections) {
+    if (empty($aboutSections)) return;
+
+    foreach ($aboutSections as $about) {
+        echo '<div class="row">';
+        echo '  <div class="col-md-6">';
+        echo '    <div class="img-box">';
+        echo '      <img src="' . htmlspecialchars($about['image'] ?? '') . '" alt="">';
+        echo '    </div>';
+        echo '  </div>';
+        echo '  <div class="col-md-6">';
+        echo '    <div class="detail-box">';
+        echo '      <div class="heading_container">';
+        echo '        <h2>' . htmlspecialchars($about['title'] ?? '') . ' <span>' . htmlspecialchars($about['highlight'] ?? '') . '</span></h2>';
+        echo '      </div>';
+        echo '      <p>' . htmlspecialchars($about['description'] ?? '') . '</p>';
+        echo '      <a href="' . htmlspecialchars($about['link'] ?? '#') . '">Read More</a>';
+        echo '    </div>';
+        echo '  </div>';
+        echo '</div>';
+    }
+}
+
+
+//rendering content in treatment section
+
+function renderTreatments($treatments) {
+    if (empty($treatments)) return;
+
+    foreach ($treatments as $treatment) {
+        echo '<div class="col-md-6 col-lg-3">';
+        echo '  <div class="box">';
+        echo '    <div class="img-box">';
+        echo '      <img src="' . htmlspecialchars($treatment['image']) . '" alt="">';
+        echo '    </div>';
+        echo '    <div class="detail-box">';
+        echo '      <h4>' . htmlspecialchars($treatment['title']) . '</h4>';
+        echo '      <p>' . htmlspecialchars($treatment['description']) . '</p>';
+        echo '      <a href="' . htmlspecialchars($treatment['link']) . '">Read More</a>';
+        echo '    </div>';
+        echo '  </div>';
+        echo '</div>';
+    }
+}
+
+//rendering infosection for footer
+
+
+// Function to render address contacts and social links
+function render_contact_section($contacts, $socials) {
+    echo '<div class="col-md-6 col-lg-3">';
+    echo '<h5>Address</h5>';
+    echo '<div class="info_contact">';
+    foreach ($contacts as $contact) {
+        $icon = htmlspecialchars($contact['icon'] ?? '');
+        $text = htmlspecialchars($contact['text'] ?? '');
+        $link = htmlspecialchars($contact['link'] ?? '#');
+        echo '<a href="' . $link . '"><i class="fa fa-' . $icon . '" aria-hidden="true"></i> <span>' . $text . '</span></a>';
+    }
+    echo '</div>';
+
+    echo '<div class="social_box">';
+    foreach ($socials as $social) {
+        $icon = htmlspecialchars($social['icon'] ?? '');
+        $link = htmlspecialchars($social['link'] ?? '#');
+        echo '<a href="' . $link . '"><i class="fa fa-' . $icon . '" aria-hidden="true"></i></a>';
+    }
+    echo '</div>';
+    echo '</div>';
+}
+
+// Function to render useful links
+function render_links_section($links) {
+    echo '<div class="col-md-6 col-lg-3">';
+    echo '<div class="info_links">';
+    echo '<h5>Useful Links</h5>';
+    echo '<div class="info_links_menu">';
+    foreach ($links as $link) {
+        $href = htmlspecialchars($link['href'] ?? '#');
+        $name = htmlspecialchars($link['name'] ?? '');
+        $active = !empty($link['active']) ? 'class="active"' : '';
+        echo '<a href="' . $href . '" ' . $active . '>' . $name . '</a>';
+    }
+    echo '</div></div></div>';
+}
+
+// Function to render posts or news
+function render_posts_section($sections) {
+    foreach ($sections as $section) {
+        echo '<div class="col-md-6 col-lg-3">';
+        echo '<div class="info_post">';
+        echo '<h5>' . htmlspecialchars($section['title'] ?? '') . '</h5>';
+        foreach ($section['items'] as $item) {
+            $image = htmlspecialchars($item['image'] ?? '');
+            $title = htmlspecialchars($item['title'] ?? '');
+            echo '<div class="post_box">';
+            echo '<div class="img-box"><img src="' . $image . '" alt=""></div>';
+            echo '<p>' . $title . '</p>';
+            echo '</div>';
+        }
+        echo '</div></div>';
+    }
+}
+
+
 
